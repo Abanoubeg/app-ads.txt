@@ -148,17 +148,23 @@
   // جلب محتوى ملف app-ads.txt من الرابط المعطى
   fetch('https://x66459b06.app-ads-txt.com/app-ads.txt')
     .then(response => response.text())
-    .then(data => console.log(data)) // يمكنك استخدام هذه البيانات كما تحتاج
-  
+    .then(data => {
+      console.log(data); // يمكنك استخدام هذه البيانات كما تحتاج
+      // عرض المحتوى في الصفحة
+      var adsTextElement = document.createElement('div');
+      adsTextElement.innerHTML = '<pre>' + data + '</pre>';
+      document.body.appendChild(adsTextElement);
+    });
+
   // تحديث بيانات التنزيلات بشكل عشوائي لأغراض العرض
   function updateDownloadStats() {
     var downloadsCounter = document.getElementById("downloadsCounter");
-    var downloads = Math.floor(Math.random() * 1000) + 200; // عدد عشوائي
+    var downloads = Math.floor(Math.random() * 10000) + 500; // عدد عشوائي
     downloadsCounter.textContent = "تم تحميل التطبيق أكثر من " + downloads + " مرة!";
   }
 
   // تشغيل تحديث بيانات التنزيلات كل ثانية
-  setInterval(updateDownloadStats, 1000);
+  setInterval(updateDownloadStats, 10000);
 
   // تحويل المستخدم لصفحة تحميل التطبيق
   document.getElementById("downloadButton").addEventListener("click", function(event) {
