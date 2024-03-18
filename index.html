@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تطبيق مهرجانات 2024</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+  }
+  .container {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #000;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  .header {
+    text-align: center;
+    margin-bottom: 30px;
+    animation: slideInDown 1s ease;
+  }
+  @keyframes slideInDown {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  .header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  .header p {
+    font-size: 18px;
+    color: #ccc;
+  }
+  .gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+  .gallery img {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease-in-out;
+    animation: slideIn 1s ease;
+  }
+  @keyframes slideIn {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  .gallery img:hover {
+    transform: scale(1.05);
+  }
+  .footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    animation: slideInUp 1s ease;
+  }
+  @keyframes slideInUp {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  .footer p {
+    font-size: 14px;
+    color: #ccc;
+  }
+  .download-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  .download-button:hover {
+    background-color: #45a049;
+  }
+  .app-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  /* Media Queries */
+  @media screen and (min-width: 768px) {
+    .container {
+      width: 80%;
+    }
+    .gallery {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <img src="https://play-lh.googleusercontent.com/5ZX03evds3DsOP5yzZYXNTm45kXeG5Y_CuLYGgsla9CwXfqcO9DKt8b8szdCp6kxug=s128-rw" alt="رمز التطبيق" class="app-icon">
+    <h1>تطبيق مهرجانات 2024</h1>
+    <p>استمتع بجميع أغاني المهرجانات القديمة والجديدة!</p>
+  </div>
+  <div class="gallery">
+    <img src="https://play-lh.googleusercontent.com/lpIwvy79x5iS--P40JZYiI8ucZYE95dUp0pS4IKoJcNls0YK4Wa_iKMiMNzgxG0fmo4=w1052-h592-rw" alt="صورة 1">
+    <img src="https://play-lh.googleusercontent.com/P7elTALrg_xfrL8Uf0jGZCC4LbvTelNZDXIAh6W9Rr9Sx2f1OLRH9HZ5HZ7AUdbYfx4=w1052-h592-rw" alt="صورة 2">
+    <img src="https://play-lh.googleusercontent.com/INvVd33AC5nLAQvFN5-r2T7IebsH05qklKuQoyS3uasaOL717v157HSRGkHUp7AcZ619=w1052-h592-rw" alt="صورة 3">
+    <img src="https://play-lh.googleusercontent.com/uJ_kmcgb-SsHAKzRa2wnxZL8rfTJCuvZPtrF3-uCIMiXe177UnS9vcFRMpVFCKMOhamf=w1052-h592-rw" alt="صورة 4">
+  </div>
+  <div class="footer">
+    <p>© 2024 جميع الحقوق محفوظة. تطبيق مهرجانات 2024.</p>
+    <a href="#" class="download-button" id="downloadButton">تحميل التطبيق</a>
+    <div id="downloadStats">
+      <span id="downloadsCounter">تم تحميل التطبيق أكثر من 200 مرة!</span>
+      <span>إصدار 3.7 رقم 122 - حجم 21 MB</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  // جلب محتوى ملف app-ads.txt من الرابط المعطى
+  fetch('https://x66459b06.app-ads-txt.com/app-ads.txt')
+    .then(response => response.text())
+    .then(data => console.log(data)) // يمكنك استخدام هذه البيانات كما تحتاج
+  
+  // تحديث بيانات التنزيلات بشكل عشوائي لأغراض العرض
+  function updateDownloadStats() {
+    var downloadsCounter = document.getElementById("downloadsCounter");
+    var downloads = Math.floor(Math.random() * 1000) + 200; // عدد عشوائي
+    downloadsCounter.textContent = "تم تحميل التطبيق أكثر من " + downloads + " مرة!";
+  }
+
+  // تشغيل تحديث بيانات التنزيلات كل ثانية
+  setInterval(updateDownloadStats, 1000);
+
+  // تحويل المستخدم لصفحة تحميل التطبيق
+  document.getElementById("downloadButton").addEventListener("click", function(event) {
+    event.preventDefault();
+    window.location.href = "https://play.google.com/store/apps/details?id=com.mihrajanati2024.Festivals_2025";
+  });
+</script>
+</body>
+</html>
